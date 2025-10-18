@@ -7,9 +7,11 @@
   "scripts": {
     "lint": "eslint ."
   },
+  "dependencies": {
+    "@nuxt/ui": "^4.0.1"
+  },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "tsconfig": "workspace:*",
-    "vue": "^3.4.21"
+    "tsconfig": "workspace:*"
   }
 }
