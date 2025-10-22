@@ -1,14 +1,39 @@
 {
   "compilerOptions": {
+    // Output modern JS that works well with ESM runtimes like Hono & Neon
     "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "dist",
-    "rootDir": "src",
+    "moduleResolution": "node",
+
+    // Enable strict typing and interoperability
     "strict": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+
+    // Output structure
+    "outDir": "dist",
+    "rootDir": "src",
+
+    // Enable JSON imports and isolated compilation
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    // Type definitions
+    "types": [
+      "node"
+    ],
+    
+    // Allow TypeScript to read the shared schemas directly during dev
+    "baseUrl": ".",
+    "paths": {
+      "@ho-dry/schemas": [
+        "../../packages/schemas/src"
+      ],
+      "@ho-dry/schemas/*": [
+        "../../packages/schemas/src/*"
+      ]
+    }
   },
   "include": [
     "src"
